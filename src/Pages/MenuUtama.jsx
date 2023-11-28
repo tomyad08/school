@@ -12,9 +12,12 @@ const MenuUtama = () => {
 
   return (
     <div>
-      <div className="p-5">
-        <Navigasi inputs={location.state} />
-        <Banner />
+      <div className="relative">
+        <div className="w-full h-40 bg-amber-400 absolute top-0 -z-10"></div>
+        <div className="p-5">
+          <Navigasi inputs={location.state} />
+          <Banner />
+        </div>
       </div>
       <Menu inputs={location.state} />
       <VideoTips />
