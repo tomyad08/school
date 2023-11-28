@@ -1,0 +1,28 @@
+const Banner = () => {
+  const picture = [
+    {
+      id: 1,
+      pict: "./banner1.jpg",
+    },
+    {
+      id: 2,
+      pict: "./banner.jpg",
+    },
+  ];
+
+  return (
+    <div className="mt-5">
+      <div className=" h-32 md:h-96 text-white rounded-lg flex w-full overflow-x-scroll">
+        {picture.map((value) => (
+          <img
+            src={value.pict}
+            alt=" "
+            className="w-96 rounded-lg me-1"
+            key={value.id}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+export default Banner;
