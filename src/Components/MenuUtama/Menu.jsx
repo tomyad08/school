@@ -93,7 +93,7 @@ const Menu = ({ inputs }) => {
               onClick={() => handleMenu(value.kode_subjek)}
             >
               <div className="w-14 h-14 md:w-32 md:h-32 bg-amber-400 rounded-full flex justify-center items-center">
-                <img src="./icon.png" alt="" className="w-10 md:w-10" />
+                <img src={value.icon} alt="" className="w-10 md:w-10" />
               </div>
               <p className="text-sm text-center mb-2">{value.subjek}</p>
             </div>

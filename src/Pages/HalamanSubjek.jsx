@@ -32,7 +32,7 @@ const Subjek = () => {
       state: data,
     });
   };
-
+  console.log(menu);
   return (
     <div>
       <div className="p-2 bg-amber-400 m-2 rounded-lg">
@@ -42,8 +42,8 @@ const Subjek = () => {
       <div className="p-2">
         {select ? (
           <>
-            <div className="flex justify-center rounded-xl overflow-hidden">
-              <ReactPlayer url={select.video} width="370px" height="190px" />
+            <div className="flex w-full justify-center rounded-xl overflow-hidden">
+              <ReactPlayer url={select.video} width="420px" height="210px" />
             </div>
             <h1 className="font-semibold mt-4">{select.topik}</h1>
             <p className="text-sm py-1">Keywords: {select.keyword}</p>
@@ -68,7 +68,13 @@ const Subjek = () => {
               key={value.id}
               onClick={() => setSelect(value)}
             >
-              <img src="./slide1.png" alt="" className="w-32 p-2 rounded-xl" />
+              <img
+                src={value.thumbnail}
+                alt=""
+                width="100"
+                height="50"
+                className="w-32 p-2 rounded-xl"
+              />
               <div className="p-1">
                 <h1 className="text-sm font-bold">{value.topik}</h1>
                 <h1 className=" text-sm">{value.keyword}</h1>
