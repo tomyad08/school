@@ -25,10 +25,13 @@ const Test = () => {
     }
   };
   return (
-    <div className="flex justify-center items-center h-screen bg-amber-400">
+    <div className="flex justify-center items-center h-screen bg-amber-100 relative">
       <div className="columns-1 w-10/12 bg-red-600 border border-4 border-white p-5 rounded-lg">
+        <div className="absolute w-32 h-32 rounded-full bg-amber-400 top-5 right-5"></div>
+        <div className="absolute w-20 h-20 rounded-full bg-amber-400 top-32 right-32"></div>
+        <div className="absolute w-60 h-60 rounded-full bg-amber-400 bottom-5 left-5 z-5"></div>
         {cond && (
-          <p className="text-sm text-center mb-5 bg-amber-100 rounded-lg p-1">
+          <p className="text-sm text-center mb-5 bg-amber-100 rounded-lg p-1 relative z-10">
             {verif}
           </p>
         )}
@@ -38,7 +41,7 @@ const Test = () => {
           className="w-14 mb-2 rounded-lg bg-amber-200 p-2"
         />
         {data.map((value) => (
-          <div key={value.id} className="text-white">
+          <div key={value.id} className="text-white relative z-10">
             <p className="pb-4 text-sm text-justify">{value.soal}</p>
             <div
               className="py-1 text-sm  hover:text-white hover:font-semibold rounded-xl"

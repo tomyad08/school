@@ -34,17 +34,18 @@ const Subjek = () => {
   };
 
   return (
-    <div className="bg-amber-100">
-      <div className="p-2 bg-amber-400 m-2 rounded-lg">
+    <div>
+      <div className="p-2 bg-amber-400  rounded-lg">
         <Navigasi inputs={location.state} />
       </div>
 
-      <div className="p-2">
+      <div className="p-2 relative z-10">
         {select ? (
           <>
             <div className="flex w-full justify-center rounded-xl overflow-hidden">
               <ReactPlayer url={select.video} width="420px" height="210px" />
             </div>
+
             <div className="bg-white rounded-xl p-5 my-3">
               <h1 className="font-semibold">{select.topik}</h1>
               <p className="text-sm pt-1 pb-4">
