@@ -63,16 +63,21 @@ const Login = () => {
     });
   };
   return (
-    <div className="w-screen h-screen bg-amber-500 flex justify-center items-center">
+    <div className="w-screen h-screen bg-amber-100 flex justify-center items-center relative overflow-hidden">
+      <div className="w-32 h-32 rounded-full bg-amber-500 absolute -right-10 top-0 "></div>
+      <div className="w-96 h-96 rounded-full bg-amber-500 absolute -left-10 bottom-0 "></div>
       <div>
         <div className="flex justify-center">
           {verif && (
-            <p className="text-center p-1 bg-red-700 mb-2 text-sm text-white rounded-lg w-10/12">
+            <p className="text-center p-1 bg-red-500 mb-2 text-sm text-white rounded-lg w-10/12">
               {message}
             </p>
           )}
         </div>
-        <div className="w-full p-5 bg-red-700 rounded-lg drop-shadow-xl">
+        <div className="w-full p-5 bg-red-600 rounded-lg drop-shadow-xl relative">
+          <div className="w-24 h-24 rounded-full bg-amber-500 absolute right-0 -z-10"></div>
+          <div className="w-10 h-10 rounded-full bg-amber-500 absolute right-24"></div>
+          <div className="w-32 h-32 rounded-full bg-amber-500 absolute bottom-10 -z-10"></div>
           <img
             src="./logo.png"
             alt=" "

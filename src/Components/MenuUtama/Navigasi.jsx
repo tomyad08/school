@@ -4,7 +4,7 @@ const Navigasi = ({ inputs }) => {
   const [condition, setCondition] = useState(false);
   return (
     <div>
-      <div className="flex justify-between">
+      <div className="flex justify-between rounded-xl">
         <div className="rounded-lg bg-red-600 p-2 rounded-lg">
           <img src="./logo.png" alt=" " className="md:w-28 w-14" />
         </div>

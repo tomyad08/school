@@ -6,17 +6,16 @@ import Login from "./Pages/Login";
 
 function App() {
   return (
-    <div
-      className="relative bg-amber-100 -z-20"
-      style={{ fontFamily: "'Varela Round', sans-serif" }}
-    >
+    <div style={{ fontFamily: "'Varela Round', sans-serif" }}>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/menu" element={<MenuUtama />} />
-          <Route path="/subjek" element={<Subjek />} />
-          <Route path="/test" element={<Test />} />
-        </Routes>
+        <div className="bg-amber-100 -z-10">
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/menu" element={<MenuUtama />} />
+            <Route path="/subjek" element={<Subjek />} />
+            <Route path="/test" element={<Test />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </div>
   );

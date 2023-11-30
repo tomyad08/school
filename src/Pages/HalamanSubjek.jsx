@@ -32,9 +32,9 @@ const Subjek = () => {
       state: data,
     });
   };
-  console.log(menu);
+
   return (
-    <div>
+    <div className="bg-amber-100">
       <div className="p-2 bg-amber-400 m-2 rounded-lg">
         <Navigasi inputs={location.state} />
       </div>
@@ -45,16 +45,21 @@ const Subjek = () => {
             <div className="flex w-full justify-center rounded-xl overflow-hidden">
               <ReactPlayer url={select.video} width="420px" height="210px" />
             </div>
-            <h1 className="font-semibold mt-4">{select.topik}</h1>
-            <p className="text-sm py-1">Keywords: {select.keyword}</p>
-            <p className="text-sm mb-2">{select.desc}</p>
-            <div
-              className="text-sm font-semibold bg-red-600 p-1 mb-5 text-center rounded-xl w-full text-white"
-              onClick={() => handleClick(select.kode_topik)}
-            >
-              Latihan Soal
+            <div className="bg-white rounded-xl p-5 my-3">
+              <h1 className="font-semibold">{select.topik}</h1>
+              <p className="text-sm pt-1 pb-4">
+                <strong>Keywords:</strong> {select.keyword}
+              </p>
+              <p className="text-sm mb-2">{select.desc}</p>
+              <div
+                className="text-sm font-semibold bg-red-600 p-1 text-center rounded-xl w-full text-white"
+                onClick={() => handleClick(select.kode_topik)}
+              >
+                Latihan Soal
+              </div>
             </div>
-            <p className="text-sm font-semibold">List Materi</p>
+
+            <h1 className="text-sm font-bold text-amber-700"> List Materi</h1>
           </>
         ) : (
           ""
@@ -64,7 +69,7 @@ const Subjek = () => {
         <div className="columns-1 justify-around mx-2 p-2">
           {menu.map((value) => (
             <div
-              className="border mb-1 rounded-lg hover:bg-amber-400 flex"
+              className="border mb-1 rounded-lg bg-white hover:bg-amber-400 flex"
               key={value.id}
               onClick={() => setSelect(value)}
             >
@@ -83,7 +88,7 @@ const Subjek = () => {
           ))}
         </div>
       ) : (
-        <div className="flex justify-center">
+        <div className="flex justify-center h-screen">
           <div className="w-11/12">
             <div className="w-full h-24 mb-1 bg-slate-200 rounded-lg animate-pulse"></div>
             <div className="w-full h-24 mb-2 bg-slate-200 rounded-lg animate-pulse"></div>

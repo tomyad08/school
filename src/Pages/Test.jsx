@@ -26,7 +26,7 @@ const Test = () => {
   };
   return (
     <div className="flex justify-center items-center h-screen bg-amber-400">
-      <div className="columns-1 w-10/12 bg-red-600 p-5 rounded-lg">
+      <div className="columns-1 w-10/12 bg-red-600 border border-4 border-white p-5 rounded-lg">
         {cond && (
           <p className="text-sm text-center mb-5 bg-amber-100 rounded-lg p-1">
             {verif}
