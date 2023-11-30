@@ -5,7 +5,8 @@ import FAQ from "../Components/MenuUtama/FAQ";
 import Footer from "../Components/MenuUtama/Footer";
 import Menu from "../Components/MenuUtama/Menu";
 import Navigasi from "../Components/MenuUtama/Navigasi";
-import VideoTips from "../Components/MenuUtama/VideoTips";
+import Quotes from "../Components/MenuUtama/Quotes";
+import Tips from "../Components/MenuUtama/Tips";
 
 const MenuUtama = () => {
   const location = useLocation();
@@ -20,7 +21,8 @@ const MenuUtama = () => {
         </div>
       </div>
       <Menu inputs={location.state} />
-      <VideoTips />
+      <Quotes />
+      <Tips />
       <FAQ />
       <Community />
       <Footer />

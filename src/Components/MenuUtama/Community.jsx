@@ -17,8 +17,8 @@ const Community = () => {
     },
   ];
   return (
-    <div className="m-2">
-      <p className="text-sm font-semibold pb-2">Komunitas</p>
+    <div className="p-5">
+      <h1 className="text-sm font-bold text-amber-700 mb-2"> Komunitas</h1>
       <div className="h-32 md:h-96 text-white rounded-lg flex w-full overflow-x-scroll">
         {Community.map((value) => (
           <img

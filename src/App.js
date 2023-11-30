@@ -6,7 +6,10 @@ import Login from "./Pages/Login";
 
 function App() {
   return (
-    <div style={{ fontFamily: "'Varela Round', sans-serif" }}>
+    <div
+      className="relative bg-amber-100 -z-20"
+      style={{ fontFamily: "'Varela Round', sans-serif" }}
+    >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />

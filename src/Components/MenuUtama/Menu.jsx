@@ -84,33 +84,37 @@ const Menu = ({ inputs }) => {
     });
   };
   return (
-    <div className="flex justify-center mx-5 mb-5">
-      {menu ? (
-        <div className="columns-4 justify-around">
-          {menu.map((value) => (
-            <div
-              key={value.kode_subjek}
-              onClick={() => handleMenu(value.kode_subjek)}
-            >
-              <div className="w-14 h-14 md:w-32 md:h-32 bg-amber-400 rounded-full flex justify-center items-center">
-                <img src={value.icon} alt="" className="w-10 md:w-10" />
+    <div className="mx-5 mb-5">
+      <h1 className="text-sm font-bold text-amber-700 mb-2"> Menu</h1>
+
+      <div className="flex justify-center bg-white px-5 pt-5 rounded-xl">
+        {menu ? (
+          <div className="columns-4 justify-around">
+            {menu.map((value) => (
+              <div
+                key={value.kode_subjek}
+                onClick={() => handleMenu(value.kode_subjek)}
+              >
+                <div className="w-14 h-14 md:w-32 md:h-32 bg-amber-400 rounded-xl flex justify-center items-center">
+                  <img src={value.icon} alt="" className="w-10 md:w-10" />
+                </div>
+                <p className="text-sm text-center mb-2">{value.subjek}</p>
               </div>
-              <p className="text-sm text-center mb-2">{value.subjek}</p>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div className="columns-5 justify-around">
-          {data.map((value) => (
-            <div key={value.id}>
-              <div className="w-14 h-14 md:w-32 md:h-32 bg-amber-400 rounded-lg flex justify-center items-center animate-pulse"></div>
-              <p className="text-sm text-center mb-2 animate-pulse">
-                {value.nama}
-              </p>
-            </div>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        ) : (
+          <div className="columns-5 justify-around">
+            {data.map((value) => (
+              <div key={value.id}>
+                <div className="w-14 h-14 md:w-32 md:h-32 bg-amber-400 rounded-lg flex justify-center items-center animate-pulse"></div>
+                <p className="text-sm text-center mb-2 animate-pulse">
+                  {value.nama}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

@@ -22,7 +22,7 @@ const Navigasi = ({ inputs }) => {
           <img
             src="./tomy.jpg"
             alt=" "
-            className="w-10 h-10 rounded-full drop-shadow-xl mt-1"
+            className="w-10 h-10 rounded-full drop-shadow-xl mt-1 border border-2 border-red-500"
           />
         </div>
       </div>
