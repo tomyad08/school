@@ -7,6 +7,7 @@ import Menu from "../Components/MenuUtama/Menu";
 import Navigasi from "../Components/MenuUtama/Navigasi";
 import Quotes from "../Components/MenuUtama/Quotes";
 import Tips from "../Components/MenuUtama/Tips";
+import OtherProduct from "../Components/MenuUtama/OtherProduct";
 
 const MenuUtama = () => {
   const location = useLocation();
@@ -23,6 +24,7 @@ const MenuUtama = () => {
       <Menu inputs={location.state} />
       <Quotes />
       <Tips />
+      <OtherProduct />
       <FAQ />
       <Community />
       <Footer />

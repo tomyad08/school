@@ -79,7 +79,7 @@ const Login = () => {
           <div className="w-10 h-10 rounded-full bg-amber-500 absolute right-24"></div>
           <div className="w-32 h-32 rounded-full bg-amber-500 absolute bottom-10 -z-10"></div>
           <img
-            src="./logo.png"
+            src="./logo_laskarui.jpeg"
             alt=" "
             className="w-16 p-2 bg-amber-100 rounded-lg mb-5"
           />

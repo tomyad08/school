@@ -5,9 +5,12 @@ const Navigasi = ({ inputs }) => {
   return (
     <div>
       <div className="flex justify-between rounded-xl">
-        <div className="rounded-lg bg-red-600 p-2 rounded-lg">
-          <img src="./logo.png" alt=" " className="md:w-28 w-14" />
-        </div>
+        <img
+          src="./logo_laskarui.jpeg"
+          alt=" "
+          className="w-20 my-1 border border-2 border-red-600 rounded-lg"
+        />
+
         <div
           className="flex justify-end"
           onClick={() => setCondition(!condition)}
