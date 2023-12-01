@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navigasi from "../Components/MenuUtama/Navigasi";
 import { useLocation, useNavigate } from "react-router-dom";
 import ReactPlayer from "react-player";
+import HalamanVideo from "./Video";
 
 const Subjek = () => {
   const location = useLocation();
@@ -27,52 +28,22 @@ const Subjek = () => {
       .then((data) => FilterFunction(data));
   }, []);
 
-  const handleClick = (data) => {
-    navigate("/test", {
-      state: data,
-    });
+  const handleSelect = (data) => {
+    setSelect(data);
+    console.log(data);
   };
 
   return (
-    <div>
-      <div className="p-2 bg-amber-400  rounded-lg">
-        <Navigasi inputs={location.state} />
-      </div>
-
-      <div className="p-2 relative z-10">
-        {select ? (
-          <>
-            <div className="flex w-full justify-center rounded-xl overflow-hidden">
-              <ReactPlayer url={select.video} width="420px" height="210px" />
-            </div>
-
-            <div className="bg-white rounded-xl p-5 my-3">
-              <h1 className="font-semibold">{select.topik}</h1>
-              <p className="text-sm pt-1 pb-4">
-                <strong>Keywords:</strong> {select.keyword}
-              </p>
-              <p className="text-sm mb-2">{select.desc}</p>
-              <div
-                className="text-sm font-semibold bg-red-600 p-1 text-center rounded-xl w-full text-white"
-                onClick={() => handleClick(select.kode_topik)}
-              >
-                Latihan Soal
-              </div>
-            </div>
-
-            <h1 className="text-sm font-bold text-amber-700"> List Materi</h1>
-          </>
-        ) : (
-          ""
-        )}
-      </div>
+    <div className="bg-amber-100">
+      <HalamanVideo inputs={select} />
       {menu ? (
         <div className="columns-1 justify-around mx-2 p-2">
+          <h1 className="text-sm text-amber-800 font-bold p-2">List Video:</h1>
           {menu.map((value) => (
             <div
-              className="border mb-1 rounded-lg bg-white hover:bg-amber-400 flex"
+              className="mb-1 rounded-lg hover:bg-red-600 hover:text-white flex"
               key={value.id}
-              onClick={() => setSelect(value)}
+              onClick={() => handleSelect(value)}
             >
               <img
                 src={value.thumbnail}
@@ -81,7 +52,7 @@ const Subjek = () => {
                 height="50"
                 className="w-32 p-2 rounded-xl"
               />
-              <div className="p-1">
+              <div className="p-1 border-b-2 border-amber-400 w-full">
                 <h1 className="text-sm font-bold">{value.topik}</h1>
                 <h1 className=" text-sm">{value.keyword}</h1>
               </div>
