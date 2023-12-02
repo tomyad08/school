@@ -22,9 +22,11 @@ const HalamanVideo = ({ inputs }) => {
           <>
             <div className="flex w-full justify-center">
               <ReactPlayer
-                light={play ? false : <img src={inputs.thumbnail} alt="" />}
+                light={
+                  play ? false : <img src={inputs.data.thumbnail} alt="" />
+                }
                 playing={play}
-                url={inputs.video}
+                url={inputs.data.video}
                 width="420px"
                 height="210px"
               />
@@ -48,15 +50,15 @@ const HalamanVideo = ({ inputs }) => {
             </div>
 
             <div className="bg-white rounded-xl p-5 m-3">
-              <h1 className="font-semibold">{inputs.topik}</h1>
+              <h1 className="font-semibold">{inputs.data.topik}</h1>
               <p className="text-sm pt-1 pb-4">
-                <strong>Keywords:</strong> {inputs.keyword}
+                <strong>Keywords:</strong> {inputs.data.keyword}
               </p>
-              <p className="text-sm mb-2">{inputs.desc}</p>
+              <p className="text-sm mb-2">{inputs.data.desc}</p>
               <div className="flex justify-center">
                 <button
                   className="text-sm font-semibold bg-red-600 p-2 text-center rounded-xl w-4/5 text-white flex justify-center"
-                  onClick={() => handleClick(inputs.kode_topik)}
+                  onClick={() => handleClick(inputs.data.kode_topik)}
                 >
                   <div className="mx-1">
                     <svg
