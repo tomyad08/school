@@ -8,6 +8,7 @@ import Navigasi from "../Components/MenuUtama/Navigasi";
 import Quotes from "../Components/MenuUtama/Quotes";
 import Tips from "../Components/MenuUtama/Tips";
 import OtherProduct from "../Components/MenuUtama/OtherProduct";
+import Ujian from "../Components/MenuUtama/Ujian";
 
 const MenuUtama = () => {
   const location = useLocation();
@@ -23,10 +24,10 @@ const MenuUtama = () => {
       </div>
       <Menu inputs={location.state} />
       <Quotes />
-      <Tips />
+      <Ujian />
       <OtherProduct />
+      <Tips />
       <FAQ />
-      <Community />
       <Footer />
     </div>
   );

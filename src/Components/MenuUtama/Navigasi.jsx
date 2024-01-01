@@ -5,11 +5,7 @@ const Navigasi = ({ inputs }) => {
   return (
     <div>
       <div className="flex justify-between rounded-xl">
-        <img
-          src="./logo_laskarui.jpeg"
-          alt=" "
-          className="w-20 my-1 border border-2 border-red-600 rounded-lg"
-        />
+        <img src="./logokui.png" alt=" " className="w-20 my-1" />
 
         <div
           className="flex justify-end"
@@ -19,7 +15,7 @@ const Navigasi = ({ inputs }) => {
             <h1 className="font-semibold text-lg text-end">
               Hi, {inputs.nama_lengkap}.
             </h1>
-            <p className="text-sm">{inputs.status} 🥳</p>
+            <p style={{ fontSize: "12px" }}>{inputs.status} 🥳</p>
           </div>
 
           <img

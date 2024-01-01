@@ -78,11 +78,7 @@ const Login = () => {
           <div className="w-24 h-24 rounded-full bg-amber-500 absolute right-0 -z-10"></div>
           <div className="w-10 h-10 rounded-full bg-amber-500 absolute right-24"></div>
           <div className="w-32 h-32 rounded-full bg-amber-500 absolute bottom-10 -z-10"></div>
-          <img
-            src="./logo_laskarui.jpeg"
-            alt=" "
-            className="w-16 p-2 bg-amber-100 rounded-lg mb-5"
-          />
+          <img src="./logokui.png" alt=" " className="w-16 mb-5" />
           <h1 className="text-2xl font-bold text-white border-b-2 border-white pb-1">
             Login
           </h1>

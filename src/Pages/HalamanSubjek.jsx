@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Navigasi from "../Components/MenuUtama/Navigasi";
 import { useLocation, useNavigate } from "react-router-dom";
 import ReactPlayer from "react-player";
-import HalamanVideo from "./Video";
+import Latex from "react-latex";
+import "katex/dist/katex.min.css";
 
 const Subjek = () => {
   const location = useLocation();
@@ -83,7 +83,9 @@ const Subjek = () => {
               <p className="text-sm pt-1 pb-4">
                 <strong>Keywords:</strong> {select.keyword}
               </p>
-              <p className="text-sm mb-2">{select.desc}</p>
+              <p className="mb-2 text-justify" style={{ fontSize: "12px" }}>
+                <Latex>{select.desc}</Latex>
+              </p>
               <div className="flex justify-center">
                 <button
                   className="text-sm font-semibold bg-red-600 p-2 text-center rounded-xl w-4/5 text-white flex justify-center"
