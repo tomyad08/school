@@ -5,7 +5,7 @@ const Navigasi = ({ inputs }) => {
   return (
     <div>
       <div className="flex justify-between rounded-xl">
-        <img src="./logokui.png" alt=" " className="w-20 my-1" />
+        <img src="./logolui.png" alt=" " className="w-20 my-1" />
 
         <div
           className="flex justify-end"

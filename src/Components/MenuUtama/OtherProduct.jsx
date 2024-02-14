@@ -3,21 +3,21 @@ const OtherProduct = () => {
     {
       id: 1,
       name: "Bimbel",
-      pict: "./bimbel.png",
+      pict: "./belajaronline.png",
       desc: "Belajar bareng teman di kelas.",
       link: "",
     },
     {
       id: 2,
       name: "Les Private",
-      pict: "./university.png",
+      pict: "./belajaronline.png",
       desc: "Belajar lebih fokus dari rumah.",
       link: "",
     },
     {
       id: 3,
       name: "Home Schooling",
-      pict: "./home-schooling.png",
+      pict: "./homeschooling.png",
       desc: "Belajar lebih flexible di ruang kelas.",
       link: "",
     },
@@ -31,7 +31,7 @@ const OtherProduct = () => {
     {
       id: 5,
       name: "Distance Learning",
-      pict: "./efektif.png",
+      pict: "./belajaronline.png",
       desc: "Belajar dari rumah melalui zoom",
       link: "",
     },
@@ -64,7 +64,9 @@ const OtherProduct = () => {
               <div className="text-center text-sm font-semibold mb-1">
                 {value.name}
               </div>
-              <p className="text-sm text-center">{value.desc}</p>
+              <p className=" text-center" style={{ fontSize: "12px" }}>
+                {value.desc}
+              </p>
             </div>
           </div>
         ))}

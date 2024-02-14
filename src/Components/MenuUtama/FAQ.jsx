@@ -4,30 +4,37 @@ const FAQ = () => {
   const Data = [
     {
       id: 1,
-      pertanyaan: "Lorem ipsum dolor met?",
+      pertanyaan: "Apa itu bimbel Laskar UI?",
       jawaban:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta maiores esse, error quos incidunt mollitia est laboriosam nobis voluptates culpa obcaecati voluptatem facilis voluptate illum ipsa tempora explicabo minima porro?",
+        "Laskar UI adalah bimbingan belajar untuk persiapan materi sekolah, persiapan ujian sekolah dan persiapan SNPMB atau sbmptn dan umptn.",
       status: false,
     },
     {
       id: 2,
-      pertanyaan: "Lorem ipsum dolor met sit amet?",
+      pertanyaan: "Mulai dari kelas berapa saja bimbel di Laskar UI",
       jawaban:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta maiores esse, error quos incidunt mollitia est laboriosam nobis voluptates culpa obcaecati voluptatem facilis voluptate illum ipsa tempora explicabo minima porro?",
+        "Laskar UI menerima siswa dari kelas 1 SD sampai 12 SMA dan alumni untuk persiapan PTN.",
       status: false,
     },
     {
       id: 3,
-      pertanyaan: "Lorem ipsum dolor me constertt?",
+      pertanyaan: "Ada program apa saja?",
       jawaban:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta maiores esse, error quos incidunt mollitia est laboriosam nobis voluptates culpa obcaecati voluptatem facilis voluptate illum ipsa tempora explicabo minima porro?",
+        "Bimbel Reguler, Bimbel Platinum, Bimbel Persiapan PTN Reguler, Bimbel Persiapan PTN Intensif.",
       status: false,
     },
     {
       id: 4,
-      pertanyaan: "Lorem ipsum dolor?",
+      pertanyaan: "Fasilitas apa saja yang di dapat?",
       jawaban:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta maiores esse, error quos incidunt mollitia est laboriosam nobis voluptates culpa obcaecati voluptatem facilis voluptate illum ipsa tempora explicabo minima porro?",
+        "1. Kelas konsultasi setiap Senin sampai Jumat jam 17.00-20.00. 2.Free kelas bahasa Inggris setiap Sabtu (pekan ke 2 dan ke 4) - TryOut. 3. Konsultasi strategi persiapan PTN",
+      status: false,
+    },
+    {
+      id: 5,
+      pertanyaan: "Siapa pengajar laskar UI?",
+      jawaban:
+        "Pengajar laskar UI alumni PTN dan S2 PTN seperti UI, UGM, IPB, UIN, UNJ dll.",
       status: false,
     },
   ];
@@ -71,9 +78,7 @@ const FAQ = () => {
             </h1>
             <p
               className={` ${
-                value.status
-                  ? "p-2 h-32 overflow-y-scroll"
-                  : "h-0 overflow-y-hidden"
+                value.status ? "p-2 overflow-y-scroll" : "h-0 overflow-y-hidden"
               }`}
             >
               {value.jawaban}

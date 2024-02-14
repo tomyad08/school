@@ -2,7 +2,7 @@ const Ujian = () => {
   const data = [
     {
       id: 1,
-      name: "Ulangan Harian",
+      name: "Ujian Harian",
       pict: "./exam.png",
     },
     {
@@ -25,7 +25,9 @@ const Ujian = () => {
             <div className="flex justify-center">
               <img src={value.pict} alt="" className="w-14" />
             </div>
-            <h1 className="text-sm text-center pt-2">{value.name}</h1>
+            <h1 className=" text-center pt-2" style={{ fontSize: "12px" }}>
+              {value.name}
+            </h1>
           </div>
         ))}
       </div>
