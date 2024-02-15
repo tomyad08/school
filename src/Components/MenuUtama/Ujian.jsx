@@ -1,27 +1,42 @@
+import { useNavigate } from "react-router-dom";
+
 const Ujian = () => {
+  const navigate = useNavigate();
   const data = [
     {
       id: 1,
-      name: "Ujian Harian",
+      name: "SMP",
+      kode: "ALL",
       pict: "./exam.png",
     },
     {
       id: 2,
-      name: "Ujian Tengah Semester",
+      name: "SMA-IPA",
+      kode: "IPA",
       pict: "./exam.png",
     },
     {
       id: 3,
-      name: "Ujian Akhir Semester",
+      name: "SMA-IPS",
+      kode: "IPS",
       pict: "./exam.png",
     },
   ];
+  const handleClick = (value) => {
+    navigate("/info", {
+      state: value,
+    });
+  };
   return (
     <div className="mx-5">
       <h1 className="text-sm font-bold text-amber-700 mb-2 pt-5">Ujian</h1>
       <div className="flex justify-center w-full bg-white rounded-xl p-5">
         {data.map((value) => (
-          <div className="w-96" key={value.id}>
+          <div
+            className="w-96"
+            key={value.id}
+            onClick={() => handleClick(value.kode)}
+          >
             <div className="flex justify-center">
               <img src={value.pict} alt="" className="w-14" />
             </div>
