@@ -4,6 +4,7 @@ import MenuUtama from "./Pages/MenuUtama";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
 import InfoPage from "./Pages/InfoPage";
+import HalamanTest from "./Components/Test.jsx/HalamanTest";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/subjek" element={<Subjek />} />
             <Route path="/test" element={<Test />} />
             <Route path="/info" element={<InfoPage />} />
+            <Route path="/test-page" element={<HalamanTest />} />
           </Routes>
         </div>
       </BrowserRouter>

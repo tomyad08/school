@@ -1,10 +1,10 @@
 import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
 import { useLocation, useNavigate } from "react-router-dom";
-import ComponentSoal from "../components/Soal";
 
 import { useEffect, useState } from "react";
 import { TestStyle } from "./TestStyle";
+import ComponentSoal from "./ComponentSoal";
 
 const HalamanTest = () => {
   //10800
@@ -18,6 +18,7 @@ const HalamanTest = () => {
   const [Loading, setLoading] = useState(false);
 
   const location = useLocation();
+  console.log(location.state, "ini");
   const navigate = useNavigate();
 
   const getData = async (data) => {
@@ -32,17 +33,26 @@ const HalamanTest = () => {
     setNo(setNumber);
   };
 
+  const setFilter = (data) => {
+    const x = data.filter((value) => {
+      if (value.kode_soal === location.state.mapel) {
+        return value;
+      }
+    });
+    setData(x);
+    getData(x);
+  };
+
   useEffect(() => {
     if (!location.state) {
       navigate("/");
     } else {
-      fetch(location.state.tryoutLink, {
+      fetch(location.state.link, {
         method: "GET",
       })
         .then((res) => res.json())
         .then((data) => {
-          setData(data);
-          getData(data);
+          setFilter(data);
         })
         .catch(() => {
           setNotif(
@@ -97,59 +107,16 @@ const HalamanTest = () => {
     }
   };
   const HandlePoint = () => {
-    let math = 0;
-    let chem = 0;
-    let bio = 0;
-    let sos = 0;
-    let PU = 0;
-    let BM = 0;
-    let PPU = 0;
+    let nilai = 0;
 
     for (let i = 0; i < Data.length; i++) {
       if (Data[i].jawaban === no[i].select) {
-        if (Data[i].kode_soal === "PK") {
-          PK += 65.997;
-          continue;
-        } else if (Data[i].kode_soal === "PM") {
-          PM += 49.936;
-          continue;
-        } else if (Data[i].kode_soal === "BINDO") {
-          IND += 33.33;
-          continue;
-        } else if (Data[i].kode_soal === "BING") {
-          ING += 49.78;
-          continue;
-        } else if (Data[i].kode_soal === "PU") {
-          PU += 33.33;
-          continue;
-        } else if (Data[i].kode_soal === "PBM") {
-          BM += 49.89;
-          continue;
-        } else if (Data[i].kode_soal === "PPU") {
-          PPU += 49.898;
-          continue;
-        }
+        nilai += 10;
       }
     }
-    const average = (PK + PU + PM + PPU + BM + ING + IND) / 7;
     const endSubmit = {
       nama_lengkap: location.state.nama_lengkap,
-      penalaran_umum: PU,
-      penalaran_matematika: PM,
-      bahasa_indonesia: IND,
-      bahasa_inggris: ING,
-      bacaan_menulis: BM,
-      pengetahuan_kuantitatif: PK,
-      pemahaman_umum: PPU,
-
-      nilai_rata_rata_tps: average,
-      presentase_pu: PU / 10,
-      presentase_m: PM / 10,
-      presentase_bind: IND / 10,
-      presentase_bing: ING / 10,
-      presentase_men: BM / 10,
-      presentase_pk: PK / 10,
-      presentase_pemu: PPU / 10,
+      nilai: nilai,
     };
 
     var formData = new FormData();
@@ -160,7 +127,7 @@ const HalamanTest = () => {
     }
 
     const data = {
-      nilai: Math.floor(average),
+      nilai: nilai,
       link_database: location.state.link_database,
       nama_lengkap: location.state.nama_lengkap,
     };

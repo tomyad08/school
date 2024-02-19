@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const Ujian = () => {
+const Ujian = ({ inputs }) => {
   const navigate = useNavigate();
   const data = [
     {
@@ -23,8 +23,12 @@ const Ujian = () => {
     },
   ];
   const handleClick = (value) => {
+    const data = {
+      nama_lengkap: inputs,
+      kode: value,
+    };
     navigate("/info", {
-      state: value,
+      state: data,
     });
   };
   return (

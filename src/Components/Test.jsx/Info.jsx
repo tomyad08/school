@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Endpoints } from "../../utils/endpoint";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Subjek } from "../../DataStatics/Subjek";
 
 const Info = () => {
@@ -8,12 +8,13 @@ const Info = () => {
   const [kode, setKode] = useState("");
   const [target, setTarget] = useState("");
   const location = useLocation();
+  const navigate = useNavigate();
   const SelectSubjek = Subjek.filter((value) => {
-    if (value.kode === location.state) {
+    if (value.kode === location.state.kode) {
       return value;
     }
   });
-  console.log(location.state);
+
   useEffect(() => {
     fetch(Endpoints.test, {
       method: "GET",
@@ -24,7 +25,14 @@ const Info = () => {
   const handleSubmit = () => {
     Data.filter((value) => {
       if (value.password === kode) {
-        console.log(value.password);
+        const data = {
+          nama_lengkap: location.state.nama_lengkap,
+          link: value.link,
+          mapel: target,
+        };
+        navigate("/test-page", {
+          state: data,
+        });
       }
     });
   };
