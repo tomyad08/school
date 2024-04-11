@@ -18,7 +18,7 @@ const HalamanTest = () => {
   const [Loading, setLoading] = useState(false);
 
   const location = useLocation();
-  console.log(location.state, "ini");
+  console.log(location.state.datas.datas.kelas, "inippp");
   const navigate = useNavigate();
 
   const getData = async (data) => {
@@ -115,8 +115,11 @@ const HalamanTest = () => {
       }
     }
     const endSubmit = {
-      nama_lengkap: location.state.nama_lengkap,
       nilai: nilai,
+      nama_lengkap: location.state.datas.datas.nama_lengkap,
+      kode_soal: location.state.mapel,
+      kode: location.state.kode,
+      kelas: location.state.datas.datas.kelas,
     };
 
     var formData = new FormData();
@@ -128,11 +131,12 @@ const HalamanTest = () => {
 
     const data = {
       nilai: nilai,
-      link_database: location.state.link_database,
-      nama_lengkap: location.state.nama_lengkap,
+      nama_lengkap: location.state.datas.datas.nama_lengkap,
+      kode_soal: location.state.datas.datas.kode_soal,
+      kode: location.state.datas.datas.kode,
     };
 
-    fetch(location.state.link_database, {
+    fetch(location.state.datas.datas.link, {
       method: "POST",
       body: formData,
     })

@@ -24,9 +24,10 @@ const Ujian = ({ inputs }) => {
   ];
   const handleClick = (value) => {
     const data = {
-      nama_lengkap: inputs,
+      datas: inputs,
       kode: value,
     };
+
     navigate("/info", {
       state: data,
     });

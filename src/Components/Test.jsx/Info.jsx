@@ -8,6 +8,7 @@ const Info = () => {
   const [kode, setKode] = useState("");
   const [target, setTarget] = useState("");
   const location = useLocation();
+  console.log(location.state, "llllllllll");
   const navigate = useNavigate();
   const SelectSubjek = Subjek.filter((value) => {
     if (value.kode === location.state.kode) {
@@ -26,9 +27,10 @@ const Info = () => {
     Data.filter((value) => {
       if (value.password === kode) {
         const data = {
-          nama_lengkap: location.state.nama_lengkap,
+          datas: location.state,
           link: value.link,
           mapel: target,
+          kode: value.kode,
         };
         navigate("/test-page", {
           state: data,

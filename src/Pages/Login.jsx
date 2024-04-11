@@ -50,14 +50,10 @@ const Login = () => {
             inputs.nama_lengkap.toLowerCase()
           );
         });
-        const select = {
-          nama_lengkap: selectLink.nama_lengkap,
-          kelas: selectLink.kelas,
-          status: selectLink.status,
-          jenis: selectLink.jenis,
-        };
+        console.log(selectLink, "ooo");
+
         navigate("/menu", {
-          state: select,
+          state: selectLink,
         });
       }
     });

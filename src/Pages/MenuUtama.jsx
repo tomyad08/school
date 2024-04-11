@@ -24,7 +24,7 @@ const MenuUtama = () => {
       </div>
       <Menu inputs={location.state} />
       <Quotes />
-      <Ujian inputs={location.state.nama_lengkap} />
+      <Ujian inputs={location.state} />
       <OtherProduct />
       <Tips />
       <FAQ />
